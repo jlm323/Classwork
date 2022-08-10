@@ -235,9 +235,35 @@ case 3:
 
 // TERNARY OPERATOR (three parts)
 
-let lighting = 'dark'
+//let lighting = 'dark'
 
-let dayOrNight = lighting === 'dark' ? 'nighttime' : 'daytime'
+//let dayOrNight = lighting === 'dark' ? 'nighttime' : 'daytime'
 
 // is lighting equal to dark? if so, return nighttime. ELSE return daytime
 
+
+// EXERCISE 1 SWITCH STATEMENTS
+
+let letter = 'A'
+switch (letter) {
+  case 'A':
+  case 'E':
+  case 'I':
+  case 'O':
+  case 'U':
+    console.log('vowel')
+    break;
+  default:
+    console.log('consonant')
+    break;
+}
+
+// EXERCISE 2 TERNARY OPERATORS
+
+// let number = -89
+// let numberStatus = number > 0 ? 'positive number' : 'negative number'
+// console.log(numberStatus);
+
+let number = 0
+let numberStatus = number > 0 ? 'positive number' : number < 0 ? 'negative number' : 'number is zero'
+console.log(numberStatus);
