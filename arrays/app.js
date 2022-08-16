@@ -86,6 +86,10 @@
 
 // EXERCISE 1
 
+// function declaration for maxOfTwoNumbers
+// takes two number arguments and returns largest of them
+// if same, return that number
+
 // function maxOfTwoNumbers(num1, num2) {
 //     if (num1 >= num2) {
 //         return num1;
@@ -99,6 +103,9 @@
 
 
 // EXERCISE 2
+
+// function expression for maxOfThree
+// takes 3 number arguments, returns largest
 
 // const maxOfThree = function(num1, num2, num3){
 //     if (num1 >= num2 && num1 >= num3) {
@@ -116,6 +123,11 @@
 
 
 // EXERCISE 3
+
+// function declaration for isCharAVowel
+// takes a character as an argument
+// returns true if vowel, false otherwise
+
 // function isCharAVowel(string){
 //     if (string == 'A' || string == 'E' || string == 'I' || string == 'O' || string == 'U') {
 //         return true;
@@ -130,7 +142,10 @@
 
 // // EXERCISE 4
 
-// function sumArray(array) {
+// function expression for sumArray
+// takes array of numbers and returns the sum
+
+// const sumArray = function(array) {
 //     let sum = 0;
 //     for (let i = 0; i < array.length; i += 1) {
 //         sum += array[i];
@@ -145,6 +160,10 @@
 
 // EXERCISE 5
 
+// function declaration for multiplyArray
+// array of numbers as argument
+// returns the product of those numbers
+
 // function multiplyArray(array) {
 //     let product = 1;
 //     for (let i = 0; i < array.length; i++){
@@ -157,10 +176,11 @@
 
 
 // EXERCISE 6 
-// const numArgs = function() {
-//     for (let i = 0; i < arguments.length; i++) {
-//         return arguments[i];
-//     }
+// function expression for numArgs
+// return number of arguments passed to function
+
+// const numArgs = function(...arguments) {
+//     return arguments.length;
 // }
 // console.log(numArgs(2, 2, 3))
 
@@ -342,39 +362,39 @@
 // nando bought a shirt for $27.83
 // paid with $100
 // how many bills he received in as large denom. as poss.
-function change(paid, cost) {
-    paid *= 100;
-    cost *= 100;
-    let changeReturn = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    while (paid > cost) {
-        if (paid >= cost + 5000) {
-            paid -= 5000; // 50 dollars converted to change
-            changeReturn[0] ++;
-        } else if (paid >= cost + 2000) {
-            paid -= 2000;
-            changeReturn[1] ++;
-        } else if (paid >= cost + 1000) {
-            paid -= 1000;
-            changeReturn[2] ++;
-        } else if (paid >= cost + 500) {
-            paid -= 500;
-            changeReturn[3] ++;
-        } else if (paid >= cost + 100) {
-            paid -= 100;
-            changeReturn[4] ++;
-        } else if (paid >= cost + 25) {
-            paid -= 25;
-            changeReturn[5] ++;
-        } else if (paid >= cost + 10) {
-            paid -= 10;
-            changeReturn[6] ++;
-        } else if (paid >= cost + 5) {
-            paid -= 5;
-            changeReturn[7] ++;
-        } else if (paid >= cost + 1) {
-            paid--;
-            changeReturn[8] ++;
-        }
-    } return 'Change returned: ' + 'fifty dollar bills: ' + changeReturn[0] + ', twenty dollar bills: ' + changeReturn[1] + ', ten dollar bills: ' + changeReturn[2] + ', five dollar bills: ' + changeReturn[3] + ', one dollar bills: ' + changeReturn[4] + ', quarters: ' + changeReturn[5] + ', dimes: ' + changeReturn[6] + ', nickels: ' + changeReturn[7] + ', pennies: ' + changeReturn[8];
-}
-console.log(change(500, 27.83))
+// function change(paid, cost) {
+//     paid *= 100;
+//     cost *= 100;
+//     let changeReturn = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+//     while (paid > cost) {
+//         if (paid >= cost + 5000) {
+//             paid -= 5000; // 50 dollars converted to change
+//             changeReturn[0] ++;
+//         } else if (paid >= cost + 2000) {
+//             paid -= 2000;
+//             changeReturn[1] ++;
+//         } else if (paid >= cost + 1000) {
+//             paid -= 1000;
+//             changeReturn[2] ++;
+//         } else if (paid >= cost + 500) {
+//             paid -= 500;
+//             changeReturn[3] ++;
+//         } else if (paid >= cost + 100) {
+//             paid -= 100;
+//             changeReturn[4] ++;
+//         } else if (paid >= cost + 25) {
+//             paid -= 25;
+//             changeReturn[5] ++;
+//         } else if (paid >= cost + 10) {
+//             paid -= 10;
+//             changeReturn[6] ++;
+//         } else if (paid >= cost + 5) {
+//             paid -= 5;
+//             changeReturn[7] ++;
+//         } else if (paid >= cost + 1) {
+//             paid--;
+//             changeReturn[8] ++;
+//         }
+//     } return 'Change returned: ' + 'fifty dollar bills: ' + changeReturn[0] + ', twenty dollar bills: ' + changeReturn[1] + ', ten dollar bills: ' + changeReturn[2] + ', five dollar bills: ' + changeReturn[3] + ', one dollar bills: ' + changeReturn[4] + ', quarters: ' + changeReturn[5] + ', dimes: ' + changeReturn[6] + ', nickels: ' + changeReturn[7] + ', pennies: ' + changeReturn[8];
+// }
+// console.log(change(100, 27.83))
