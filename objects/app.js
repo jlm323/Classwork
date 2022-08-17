@@ -334,5 +334,5 @@ const cat = {
 // target specific character of a property value
 // y in platypus
 
-console.log(cat.friends[2].buddies[1].type[1, [4]])
-console.log(cat.friends[2].buddies[1].type.charAt(4))
+// console.log(cat.friends[2].buddies[1].type[1, [4]])
+// console.log(cat.friends[2].buddies[1].type.charAt(4))

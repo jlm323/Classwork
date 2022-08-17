@@ -1,23 +1,24 @@
-let station1 = radio.station[0]
-let station2 = radio.station[1]
+
 
 const radio = {
     stations: [
-        {name: '96.1',
-        songs: [
-            {
-                title: 'As It Was',
-                artist: 'Harry Styles'
-            },
-            {
-                title: '7 Rings',
-                artist: 'Ariana Grande'
-            },
-            {
-                title: 'Cherry',
-                artist: 'Harry Styles'
-            }
-        ]},
+        {
+            name: '96.1',
+            songs: [
+                {
+                    title: 'As It Was',
+                    artist: 'Harry Styles'
+                },
+                {
+                    title: '7 Rings',
+                    artist: 'Ariana Grande'
+                },
+                {
+                    title: 'Cherry',
+                    artist: 'Harry Styles'
+                }
+            ]
+        },
         {
             name: '100.7',
             songs: [
@@ -32,12 +33,17 @@ const radio = {
                 {
                     title: 'Say So',
                     artist: 'Doja Cat'
-                }
-            ]
-        }
+                },
+            ],
+        },
     ],
-    randomStation(station1, station2){
-        return Math.random()
-    }
+    randomStation: function() {
+        
+        let stationNum = Math.floor(Math.random() * radio.stations.length);
+        let songNum = Math.floor(Math.random() * radio.stations[stationNum].songs.length);
+        
+        console.log('Now playing: ' + radio.stations[stationNum].songs[songNum].title + ' by ' + radio.stations[stationNum].songs[songNum].artist);
+    },
     
 }
+radio.randomStation();
