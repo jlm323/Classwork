@@ -236,63 +236,63 @@
 
 
 // LAB EXERCISE 2
-class Person {
-    constructor(name, area, abode) {
-        this.name = name;
-        this.area = area;
-        this.abode = abode;
-    }
-    greet() {
-        console.log('Hello!');
-    }
-    food() {
-        console.log('Eat lunch');
-    }
-    sleep() {
-        console.log('Bedtime');
-    }
-}
+// class Person {
+//     constructor(name, area, abode) {
+//         this.name = name;
+//         this.area = area;
+//         this.abode = abode;
+//     }
+//     greet() {
+//         console.log('Hello!');
+//     }
+//     food() {
+//         console.log('Eat lunch');
+//     }
+//     sleep() {
+//         console.log('Bedtime');
+//     }
+// }
 
-class PostalWorker extends Person {
-    sorting() {
-        console.log('Sorting mail');
-    }
-    deliver() {
-        console.log('Deliver mail');
-    }
-    drive() {
-        console.log('Drive delivery route');
-    }
-}
+// class PostalWorker extends Person {
+//     sorting() {
+//         console.log('Sorting mail');
+//     }
+//     deliver() {
+//         console.log('Deliver mail');
+//     }
+//     drive() {
+//         console.log('Drive delivery route');
+//     }
+// }
 
-class Chef extends Person {
-    chop() {
-        console.log('Chop veggies');
-    }
-    bake() {
-        console.log('Bake bread');
-    }
-    fry() {
-        console.log('Stirfry')
-    }
-}
+// class Chef extends Person {
+//     chop() {
+//         console.log('Chop veggies');
+//     }
+//     bake() {
+//         console.log('Bake bread');
+//     }
+//     fry() {
+//         console.log('Stirfry')
+//     }
+// }
 
-const postal = [new PostalWorker('Bobby', 'Suburban', 'House'), new PostalWorker('Jodie', 'Rural', 'House')]
+// const postal = [new PostalWorker('Bobby', 'Suburban', 'House'), new PostalWorker('Jodie', 'Rural', 'House')]
 
-const chefs = [new Chef('Gordon', 'Urban', 'Apartment'), new Chef('Rachel', 'Suburban', 'House')]
+// const chefs = [new Chef('Gordon', 'Urban', 'Apartment'), new Chef('Rachel', 'Suburban', 'House')]
 
-console.log(postal[0])
-console.log(postal[1])
-console.log(chefs[0])
-console.log(chefs[1])
+// console.log(postal[0])
+// console.log(postal[1])
+// console.log(chefs[0])
+// console.log(chefs[1])
 
-postal[0].sorting()
-postal[1].deliver()
-postal[1].drive()
+// postal[0].sorting()
+// postal[1].deliver()
+// postal[1].drive()
 
-chefs[0].chop()
-chefs[1].bake()
-chefs[0].fry()
+// chefs[0].chop()
+// chefs[1].bake()
+// chefs[0].fry()
 
 
 // LAB EXERCISE 3
@@ -303,25 +303,45 @@ class BankAccount {
         this.balance = balance;
         this.acctNum = acctNum;
     }
-    deposit() {
-        console.log('deposit')
+    deposit(num) {
+        console.log('Deposited ' + num);
     }
-    withdraw() {
-        console.log('withdraw')
+    withdraw(num) {
+        if (num < this.balance) {
+            this.balance -= num;
+            console.log('withdrew ' + num);
+        } else {
+            console.log('Not enough funds');
+        }
+        
     }
 }
 
 class CheckingAccount extends BankAccount {
-    constructor(overdraftEnabled) {
+    constructor(ownerName, balance, acctNum, overdraftEnabled) {
+        super(ownerName, balance, acctNum, overdraftEnabled);
         this.overdraftEnabled = overdraftEnabled;
     }
-    withdraw(overdraft) {
-        console.log('overdraft amount: ' + overdraft);
+    withdraw(overdraftEnabled) {
+        if (overdraftEnabled) {
+            console.log('Overdraft enabled');
+        } else {
+            console.log('Cannot finish request');
+        }
+        
     }
 }
 
 class SavingsAccount extends BankAccount {
-    withdraw(disallow) {
-        console.log(disallow);
+    withdraw() {
+        console.log('Cannot complete request');
     }
 }
+
+const member1Bank = new BankAccount('Roger', 100, '0071 503')
+const member1Checking = new CheckingAccount('Roger', 100, '0071 503',)
+const member1Savings = new SavingsAccount('Roger', 600, '0071 502')
+member1Checking.deposit(400)
+member1Checking.withdraw(5000)
+member1Bank.withdraw(45)
+member1Savings.withdraw(1000)
