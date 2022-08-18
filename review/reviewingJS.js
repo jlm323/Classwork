@@ -58,3 +58,34 @@ console.log(e === 'Kevin');
 console.log(a != b || c);
 console.log(a * a === d);
 console.log(48 == '48');
+
+// D. The Farm
+// D 1. 
+let animal = 'cow';
+animal = 'chicken';
+
+// D 2. 
+if (animal === 'cow') {
+    console.log('moooooo');
+} else {
+    console.log("Hey! You're not a cow.");
+}
+
+// E. Driver's Ed
+// E 1. 
+let giveKeys =
+
+// E 2.
+function(personAge) {
+    if (personAge > 16) {
+        console.log('Here are the keys!');
+    } else if (personAge < 16) {
+        console.log("Sorry, you're too young.");
+    }
+}
+giveKeys(40);
+giveKeys(12);
+
+// LOOPS
+
+// A 1.
