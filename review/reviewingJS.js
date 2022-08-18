@@ -89,3 +89,37 @@ giveKeys(12);
 // LOOPS
 
 // A 1.
+// for (let i = 0; i <= 10; i++) {
+//     console.log(i);
+// };
+
+// A 2. 
+// for (let i = 10; i <= 400; i++) {
+//     console.log(i);
+// };
+
+// A 3. 
+// for (let i = 12; i <= 4000; i += 3) {
+//     console.log(i);
+// };
+
+// B 1. and B 2.
+// for(let i = 1; i <= 100; i++) {
+//     if (i % 2 == 0) {
+//         console.log(i + '<-- is an even number');
+//     } else {
+//     console.log(i);
+//     }
+// }
+
+// C 1.
+// for (let i = 0; i <= 100; i++) {
+//     if (i % 5 == 0) {
+//         console.log('I found a ' + i + '. High five!');
+//     } else if (i % 3 == 0) {
+//         console.log('I found a ' + i + '. Three is a crowd');
+//     } else if (i % 3 == 0 && i % 5 == 0) {
+//         console.log('I found a ' + i + '. Three is a crowd');
+//         console.log('I found a ' + i + '. High five!');
+//     }
+// }
