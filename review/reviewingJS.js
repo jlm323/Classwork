@@ -189,3 +189,116 @@ console.log(ourClass)
 
 // E. Mix it up
 // E 1. 
+const myArray = [5, 10, 500, 20]
+myArray.push('Aegon');
+myArray.push('Daenerys');
+// E 2. 
+myArray.shift();
+
+// E 3. 
+myArray.unshift('Bob Marley');
+
+// E 4. 
+myArray.pop();
+
+// E 5.
+myArray.reverse();
+// the .reverse() method reversed the order of the array elements. it is not mutated, it is a copy of the array.
+// mutated means the original array is changed. 
+
+console.log(myArray);
+
+// F. Biggie Smalls
+// F 1. 
+let randomNum = 67;
+if (randomNum < 100) {
+    console.log('little number');
+
+// F 2.
+} else {
+    console.log('big number')
+}
+
+
+// G. Monkey in the middle
+// G 1. 
+// if (num < 5) {
+//     console.log('little number');
+// } else if (num > 10) {
+//     console.log('big number');
+// } else {
+//     console.log('monkey');
+// }
+
+
+// H. What's in your closet?
+
+const krystynsCloset = [
+    "left shoe",
+    "cowboy boots",
+    "right sock",
+    "GA hoodie",
+    "green pants",
+    "yellow knit hat",
+    "marshmallow peeps"
+];
+const thomsCloset = [
+    [
+        "grey button-up",
+        "dark grey button-up",
+        "light blue button-up",
+        "blue button-up",
+    ], [
+        "grey jeans",
+        "jeans",
+        "PJs",
+    ], [
+        "wool mittens",
+        "wool scarf",
+        "raybans"
+    ]
+];
+// H 1. 
+console.log(`Krystyn is rocking that ${krystynsCloset[2]} today!`);
+
+// H 2. 
+krystynsCloset.splice(6, 0, 'raybans')
+
+// H 3. 
+krystynsCloset[5] = 'stained knit hat'
+console.log(krystynsCloset)
+
+// H 4. 
+thomsCloset[0][0];
+
+// H 5. 
+thomsCloset[1][2]
+
+// H 6. 
+thomsCloset[2][1]
+
+// H 7.
+console.log(`Thom is looking fierce in a ${thomsCloset[0][0]}, ${thomsCloset[1][1]} and ${thomsCloset[2][1]}!`)
+
+// H 8. 
+thomsCloset[1][2] = "Footie Pajamas"
+
+
+// FUNCTIONS
+// A. printGreeting
+// console.log(printGreeting('Slimer'));
+
+// B. printCool
+printCool = name => {
+    console.log(name + ' is cool!');
+}
+printCool('Captain Reynolds')
+
+// C. calculateCube
+calculateCube = a => {
+    volume = a * a * a;
+    console.log(volume);
+}
+calculateCube(5);
+
+// D. isVowel
