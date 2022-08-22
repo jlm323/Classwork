@@ -302,3 +302,60 @@ calculateCube = a => {
 calculateCube(5);
 
 // D. isVowel
+isVowel = char => {
+    if (char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'){
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(isVowel('P'))
+
+// E. getTwoLengths
+getTwoLengths = (string1, string2) => {
+    return [string1.length, string2.length];
+};
+console.log(getTwoLengths('hank', 'hippopotalous'));
+
+// F. getMultipleLengths
+getMultipleLengths = arrString => {
+    let lengthOfString = [];
+    for (let i = 0; i < arrString.length; i++) {
+        lengthOfString.push(arrString[i].length);
+    }
+    return lengthOfString;
+}
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]))
+
+// G. maxOfThree
+maxOfThree = (num1, num2, num3) => {
+    if (num1 >= num2 && num1 >= num3) {
+        return num1;
+    } else if (num2 >= num3 && num2 >= num1) {
+        return num2;
+    } else if (num3 >= num1 && num3 >= num2) {
+        return num3;
+}
+}
+console.log(maxOfThree(4, 6, 2))
+
+// H. printLongestWord
+printLongestWord = arrayOfStrings => {
+    let longestWord = arrayOfStrings[0];
+    for (let i = 0; i < arrayOfStrings.length; i++) {
+        if (arrayOfStrings[i].length > longestWord.length) {
+            longestWord = arrayOfStrings[i];
+        }
+    } 
+    return longestWord;
+}
+
+console.log(printLongestWord(['BoJack', 'Princess', 'Dianebobobobobobobo', 'a', 'Max', 'Peanutbutter', 'big']))
+
+// OBJECTS 
+
+// A. Make a user object
+// A 1. 
+let user = {
+    
+}
