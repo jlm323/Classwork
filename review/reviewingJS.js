@@ -472,3 +472,10 @@ combineCats = (mama, papa) => {
 console.log(combineCats(cat1, cat2));
 
 // 4. Cat brain bender
+console.log(combineCats(
+    combineCats(
+        combineCats(cat1, cat2), combineCats(cat1, cat2)
+    ), combineCats(
+        combineCats(cat1, cat2), combineCats(cat1, cat2)
+    )
+))
