@@ -357,5 +357,118 @@ console.log(printLongestWord(['BoJack', 'Princess', 'Dianebobobobobobobo', 'a', 
 // A. Make a user object
 // A 1. 
 let user = {
-    
+    name:'Jo',
+    email: 'joabc@gmail.com',
+    age: 21,
+    purchased: [],
 }
+
+// B. Update the user
+// B 1. 
+user.email = 'josiahabc@gmail.com'
+
+// B 2. 
+user.age++;
+
+
+// C. Adding keys and values
+user['location'] = 'Long Beach, CA'
+console.log(user.location)
+
+// D. Shopaholic!
+// D 1. 
+user.purchased.push('carbohydrates');
+
+// D 2. 
+user.purchased.push('peace of mind');
+
+// D 3.
+user.purchased.push('Merino jodhpurs');
+
+// D 4.
+console.log(user.purchased[2]);
+
+// E. Object-within-object
+// E 1. 
+user.friend = {
+    name: 'Aaron',
+    age: 21,
+    location: 'Long Beach, CA',
+    purchased: []
+}
+
+// E 2. 
+console.log(user.friend.name)
+
+// E 3. 
+console.log(user.friend.location)
+
+// E 4. 
+user.friend.age = 55;
+
+// E 5. 
+user.friend.purchased.push('The One Ring');
+
+// E 6. 
+user.friend.purchased.push('A latte');
+
+// E 7.
+console.log(user.friend.purchased[1]);
+
+// F. Loops
+// F 1. 
+for (let i = 0; i < user.purchased.length; i++) {
+    console.log(user.purchased[i]); 
+}
+
+// F 2. 
+for (let j = 0; j < user.friend.purchased.length; j++) {
+    console.log(user.friend.purchased[j]);
+}
+
+// G. Functions can operate on object
+// G 1. 
+// updateUser = () => {
+//     user.age++;
+//     user.name.toUpperCase();
+// }
+
+// G 2.
+// oldAndLoud = person => {
+//     person.age++;
+//     person.name.toUpperCase();
+// }
+
+// console.log(oldAndLoud(user));
+
+// Cat Combinator
+// 1. Mama cat
+let cat1 = {
+    name: 'Crystal',
+    breed: 'Persian',
+    age: 4,
+}
+// 2. Papa cat
+let cat2 = {
+    name: 'Lucius',
+    breed: 'Cornish Rex',
+    age: 5,
+}
+
+// 3. Combine cats!
+// combineCats = (mama, papa) => {
+//     console.log(mama, papa);
+// }
+// combineCats(cat1, cat2);
+
+combineCats = (mama, papa) => {
+    let cat3 = {
+        name: mama.name + papa.name,
+        age: 1,
+        breed: mama.breed + '-' + papa.breed,
+    }
+    return cat3;
+}
+console.log(combineCats(cat1, cat2));
+
+// 4. Cat brain bender
