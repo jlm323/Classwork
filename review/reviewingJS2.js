@@ -111,3 +111,17 @@ whereIsWaldo.splice(1, 1);
 whereIsWaldo[1][2] = 'No One';
 
 console.log(whereIsWaldo[2][1][1]);
+
+
+
+// Excited Kitten
+
+const catTalk = ['...human...why you taking pictures of me?...', '...the catnip made me do it...', '...why does the red dot always get away...']
+for (let i = 0; i <= 20; i++){
+    if (i % 2 === 0) {
+        let randomTalk = Math.floor(Math.random() * catTalk.length)
+        console.log(catTalk[randomTalk]);
+    } else {
+    console.log('Love me, pet me! HSSSSSS!')
+    }
+}
