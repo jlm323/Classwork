@@ -34,22 +34,31 @@
 
 // Wild Wild Life
 
-const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
-const sharky = ['Sharky', 'shark', 20, 'Left Coast']
-const plantee = ['Plantee', 'plant', 5000, 'Mordor']
-const porgee = ['Porgee', 'Porg', 186, 'Ahch-To']
-const dart = ["D'Art", "Demogorgan Dog", 2, "Upside Down"]
+// const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
+// const sharky = ['Sharky', 'shark', 20, 'Left Coast']
+// const plantee = ['Plantee', 'plant', 5000, 'Mordor']
+// const porgee = ['Porgee', 'Porg', 186, 'Ahch-To']
+// const dart = ["D'Art", "Demogorgan Dog", 2, "Upside Down"]
 
-plantee[2]++;
-console.log(plantee);   // one year older
+// plantee[2]++;
+// console.log(plantee);   // one year older
 
-wolfy[3] = 'Gotham City';
-console.log(wolfy);     // change hometown
+// wolfy[3] = 'Gotham City';
+// console.log(wolfy);     // change hometown
 
-dart.push("Hawkins");
-console.log(dart);
+// dart.push("Hawkins");
+// console.log(dart);
 
-wolfy.shift();
-wolfy.unshift('Gameboy');
-console.log(wolfy);
+// wolfy.shift();
+// wolfy.unshift('Gameboy');
+// console.log(wolfy);
 
+
+
+// Yell at the Ninja Turtles
+
+const ninjaTurtles = ['Donatello', 'Leonardo', 'Raphael', 'Michaelangelo'];
+
+for (let turtles of ninjaTurtles) {
+    console.log(turtles.toUpperCase());
+}
