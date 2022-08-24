@@ -1,0 +1,10 @@
+html {
+    background-color: black;
+    color: white;
+}
+/* p {
+    background-color: blueviolet;
+} */
+a:visited {
+    color: lime;
+}
