@@ -1,22 +1,26 @@
 // PART II. JAVASCRIPT REPS
 
+////////////////////////////////////////////////////
 // Easy going
+////////////////////////////////////////////////////
 
 // for(let i = 1; i <= 20; i++) {
 //     console.log(i);
 // }
 
 
-
+////////////////////////////////////////////////////
 // Get Even
+////////////////////////////////////////////////////
 
 // for(let i = 0; i <= 200; i+=2) {
 //     console.log(i);
 // }
 
 
-
+////////////////////////////////////////////////////
 // Fizz Buzz
+////////////////////////////////////////////////////
 
 // for (let i = 1; i <= 100; i++) {
 //     if (i % 3 === 0 && i % 5 === 0) {
@@ -31,8 +35,9 @@
 // }
 
 
-
+////////////////////////////////////////////////////
 // Wild Wild Life
+////////////////////////////////////////////////////
 
 // const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
 // const sharky = ['Sharky', 'shark', 20, 'Left Coast']
@@ -54,8 +59,9 @@
 // console.log(wolfy);
 
 
-
+////////////////////////////////////////////////////
 // Yell at the Ninja Turtles
+////////////////////////////////////////////////////
 
 // const ninjaTurtles = ['Donatello', 'Leonardo', 'Raphael', 'Michaelangelo'];
 
@@ -64,8 +70,9 @@
 // }
 
 
-
+////////////////////////////////////////////////////
 // Methods, revisited
+////////////////////////////////////////////////////
 
 // const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious']
 
@@ -101,8 +108,9 @@
 // if you want the array to be mutated, declare it with const. if you want the array to get reassigned, declare it with let.
 
 
-
+////////////////////////////////////////////////////
 // Where is Waldo
+////////////////////////////////////////////////////
 
 const whereIsWaldo = [['Timmy', 'Frank'], 'Eggbert', ['Lucinda', 'Jacc', 'Neff', 'Snoop'], ['Petunia', ['Baked Goods', 'Waldo']]];
 
@@ -114,14 +122,80 @@ console.log(whereIsWaldo[2][1][1]);
 
 
 
+////////////////////////////////////////////////////
 // Excited Kitten
+////////////////////////////////////////////////////
 
-const catTalk = ['...human...why you taking pictures of me?...', '...the catnip made me do it...', '...why does the red dot always get away...']
-for (let i = 0; i <= 20; i++){
-    if (i % 2 === 0) {
-        let randomTalk = Math.floor(Math.random() * catTalk.length)
-        console.log(catTalk[randomTalk]);
-    } else {
-    console.log('Love me, pet me! HSSSSSS!')
-    }
+// const catTalk = ['...human...why you taking pictures of me?...', '...the catnip made me do it...', '...why does the red dot always get away...']
+// for (let i = 0; i <= 20; i++){
+//     if (i % 2 === 0) {
+//         let randomTalk = Math.floor(Math.random() * catTalk.length)
+//         console.log(catTalk[randomTalk]);
+//     } else {
+//     console.log('Love me, pet me! HSSSSSS!')
+//     }
+// }
+
+
+////////////////////////////////////////////////////
+// Find the Median
+////////////////////////////////////////////////////
+
+const nums = [14, 11, 16, 15, 13, 16, 15, 17, 19, 11, 12, 14, 19, 11, 15, 17, 11, 18, 12, 17, 12, 71, 18, 15, 12];
+
+console.log(nums.length);
+let med = Math.floor(nums.length/2);
+nums.sort();
+console.log(nums[med]);
+
+
+////////////////////////////////////////////////////
+// Return of the Closets
+ ////////////////////////////////////////////////////
+
+ const krystynsCloset = [
+    "left shoe",
+    "cowboy boots",
+    "right sock",
+    "GA hoodie",
+    "green pants",
+    "yellow knit hat",
+    "marshmallow peeps"
+];
+const thomsCloset = [
+    [
+        "grey button-up",
+        "dark grey button-up",
+        "light blue button-up",
+        "blue button-up",
+    ], [
+        "grey jeans",
+        "jeans",
+        "PJs",
+    ], [
+        "wool mittens",
+        "wool scarf",
+        "raybans"
+    ]
+];
+
+////////////////////
+// Alien Attire
+///////////////////
+
+const krystynsShoe = krystynsCloset.shift();
+
+thomsCloset[2].push(krystynsShoe);
+
+console.log(thomsCloset)
+
+///////////////////
+// Dress Us Up
+///////////////////
+
+const krystynsFits = Math.floor(Math.random() * krystynsCloset.length, 1);
+const thomFits = Math.floor(Math.random() * thomsCloset[0].length, 1);
+
+for (let i = 0; i < 3; i++) {
+console.log("Krystyn's outfit is: " + krystynsCloset[krystynsFits] + ", " + krystynsCloset[krystynsFits] + ", and " + krystynsCloset[krystynsFits]);
 }
