@@ -1,9 +1,28 @@
+// var menuLinks = [
+//     {text: 'about', href: '/about'},
+//     {text: 'catalog', href: '/catalog'},
+//     {text: 'orders', href: '/orders'},
+//     {text: 'account', href: '/account'},
+//   ];
+
+
 var menuLinks = [
-    {text: 'about', href: '/about'},
-    {text: 'catalog', href: '/catalog'},
-    {text: 'orders', href: '/orders'},
-    {text: 'account', href: '/account'},
-  ];
+  {text: 'about', href: '/about'},
+  {text: 'catalog', href: '#', subLinks: [
+    {text: 'all', href: '/catalog/all'},
+    {text: 'top selling', href: '/catalog/top'},
+    {text: 'search', href: '/catalog/search'},
+  ]},
+  {text: 'orders', href: '#' , subLinks: [
+    {text: 'new', href: '/orders/new'},
+    {text: 'pending', href: '/orders/pending'},
+    {text: 'history', href: '/orders/history'},
+  ]},
+  {text: 'account', href: '#', subLinks: [
+    {text: 'profile', href: '/account/profile'},
+    {text: 'sign out', href: '/account/signout'},
+  ]},
+];
 
 let mainEl = document.querySelector("main")
 
@@ -25,5 +44,44 @@ for (link of menuLinks) {
     linkA.innerText = link.text;
     topMenuEl.appendChild(linkA);
 }
+
+
+
+
+////////////////////////////////////////
+// LAB PART 2
+///////////////////////////////////////
+
+let subMenuEl = document.getElementById("sub-menu");
+
+subMenuEl.style.height = '100%';
+
+subMenuEl.style.backgroundColor = 'var(--sub-menu-bg)'
+
+subMenuEl.classList.add('flex-around')
+
+subMenuEl.style.position = 'absolute';
+
+subMenuEl.style.top = '0';
+
+let topMenuLinks = document.querySelectorAll('a');
+
+let showingSubMenu = false;
+
+topMenuEl.addEventListener('click', function (event){
+  event.preventDefault();
+  if (event.target != 'a'){
+    return;
+  }
+  console.log('a')
+});
+
+
+topMenuEl.addEventListener('click', function() {
+  if ('a' === active) {
+
+    subMenuEl.style.top = 0;
+  } 
+})
 
 
