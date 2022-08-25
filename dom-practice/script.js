@@ -65,7 +65,7 @@ pTag.setAttribute("class", "whatever-class-name");
 // pTag.classList.add("whatever-class-name")
 pTag.classList.remove("whatever-class-name")
 // pTag.classList.toggle(className)
-// pTag.classList.contains(className)
+// pTag.classList.contai-ns(className)
 // pTag.classList.replace(oldClass, newClass)
 
 
