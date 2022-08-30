@@ -1,4 +1,4 @@
-// PART II. JAVASCRIPT REPS
+// PART II. JAVASCRIPT review
 
 ////////////////////////////////////////////////////
 // Easy going
@@ -112,13 +112,13 @@
 // Where is Waldo
 ////////////////////////////////////////////////////
 
-const whereIsWaldo = [['Timmy', 'Frank'], 'Eggbert', ['Lucinda', 'Jacc', 'Neff', 'Snoop'], ['Petunia', ['Baked Goods', 'Waldo']]];
+// const whereIsWaldo = [['Timmy', 'Frank'], 'Eggbert', ['Lucinda', 'Jacc', 'Neff', 'Snoop'], ['Petunia', ['Baked Goods', 'Waldo']]];
 
-whereIsWaldo.splice(1, 1);
+// whereIsWaldo.splice(1, 1);
 
-whereIsWaldo[1][2] = 'No One';
+// whereIsWaldo[1][2] = 'No One';
 
-console.log(whereIsWaldo[2][1][1]);
+// console.log(whereIsWaldo[2][1][1]);
 
 
 
@@ -141,12 +141,12 @@ console.log(whereIsWaldo[2][1][1]);
 // Find the Median
 ////////////////////////////////////////////////////
 
-const nums = [14, 11, 16, 15, 13, 16, 15, 17, 19, 11, 12, 14, 19, 11, 15, 17, 11, 18, 12, 17, 12, 71, 18, 15, 12];
+// const nums = [14, 11, 16, 15, 13, 16, 15, 17, 19, 11, 12, 14, 19, 11, 15, 17, 11, 18, 12, 17, 12, 71, 18, 15, 12];
 
-console.log(nums.length);
-let med = Math.floor(nums.length/2);
-nums.sort();
-console.log(nums[med]);
+// console.log(nums.length);
+// let med = Math.floor(nums.length/2);
+// nums.sort();
+// console.log(nums[med]);
 
 
 ////////////////////////////////////////////////////
@@ -187,15 +187,37 @@ const krystynsShoe = krystynsCloset.shift();
 
 thomsCloset[2].push(krystynsShoe);
 
-console.log(thomsCloset)
+// console.log(thomsCloset)
 
 ///////////////////
 // Dress Us Up
 ///////////////////
 
-const krystynsFits = Math.floor(Math.random() * krystynsCloset.length, 1);
-const thomFits = Math.floor(Math.random() * thomsCloset[0].length, 1);
 
-for (let i = 0; i < 3; i++) {
-console.log("Krystyn's outfit is: " + krystynsCloset[krystynsFits] + ", " + krystynsCloset[krystynsFits] + ", and " + krystynsCloset[krystynsFits]);
+console.log("Krystyn's first outfit is: " + krystynsCloset[0] + ", " + krystynsCloset[2] + ", and " + krystynsCloset[3]);
+console.log("Krystyn's next outfit is: " + krystynsCloset[3] + ", " + krystynsCloset[4] + ", and " + krystynsCloset[0]);
+console.log("Krystyn's last outfit is: " + krystynsCloset[0] + ", " + krystynsCloset[4] + ", and " + krystynsCloset[5]);
+
+console.log("Thom's first outfit is: " + thomsCloset[0][1] + ", " + thomsCloset[1][1] + ", and " + thomsCloset[2][2]);
+console.log("Thom's next outfit is: " + thomsCloset[0][2] + ", " + thomsCloset[1][2] + ", and " + thomsCloset[2][1]);
+console.log("Thom's last outfit is: " + thomsCloset[0][3] + ", " + thomsCloset[1][0] + ", and " + thomsCloset[2][0]);
+
+
+////////////////////
+// Dirty Laundry
+///////////////////
+
+for (i = 0; i < krystynsCloset.length; i++) {
+    console.log("WHIRR: Now washing " + krystynsCloset[i])
+}
+
+
+////////////////////
+// Inventory
+///////////////////
+
+for (let i = 0; i < thomsCloset.length; i++) {
+    for (let j = 0; j < thomsCloset.length; j++) {
+        console.log(thomsCloset[i][j]);
+    }
 }
