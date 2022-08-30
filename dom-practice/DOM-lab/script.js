@@ -70,18 +70,73 @@ let showingSubMenu = false;
 
 topMenuEl.addEventListener('click', function (event){
   event.preventDefault();
-  if (event.target != 'a'){
+
+  if (event.target.tagName != 'A'){
     return;
   }
-  console.log('a')
+  console.log(event.target);
+
+  if (event.target.classList.contains('active')) {
+    event.target.classList.remove('active');
+    showingSubMenu = false;
+    subMenuEl.style.top = '0';
+    return;
+  }
+
+  for (i = 0; i < topMenuLinks.length; i++) {
+    topMenuLinks[i].classList.remove('active');
+  }
+  event.target.classList.add('active');
+
+   let activeLink 
+  for (i = 0; i < menuLinks.length; i++) {
+    if (event.target.text == menuLinks[i].text) {
+      activeLink = menuLinks[i]
+    }
+  } 
+  if (activeLink['subLinks']) {
+    showingSubMenu = true;
+  } else {
+    showingSubMenu = false;
+  }
+  
+  const buildSubMenu = function(obj) {
+    while (subMenuEl.firstChild) {
+      subMenuEl.removeChild(subMenuEl.firstChild);
+    }
+
+    for(let i = 0; i < obj.subLinks.length; i++) {
+      let link = document.createElement('a');
+      link.href = obj.subLinks[i].href;
+      link.innerText = obj.subLinks[i].text;
+      subMenuEl.appendChild(link);
+    }
+    }
+  
+
+  if (showingSubMenu === true) {
+      buildSubMenu(activeLink)
+      subMenuEl.style.top = '100%';
+  } else if (showingSubMenu === false) {
+    subMenuEl.style.top = '0';
+  }
+  
 });
 
 
-topMenuEl.addEventListener('click', function() {
-  if ('a' === active) {
 
-    subMenuEl.style.top = 0;
-  } 
-})
+ subMenuEl.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (event.target.tagName != 'A') {
+      return;
+    }
 
+    showingSubMenu = false;
+    subMenuEl.style.top = '0';
 
+    for (let i = 0; i < topMenuLinks.length; i++) {
+      topMenuLinks[i].classList.remove('active');
+    }
+    
+    mainEl.innerText = `<h1>${event.target.text}</h1>`;
+  })
