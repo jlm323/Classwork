@@ -1,0 +1,41 @@
+html {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.big {
+    background-color: blueviolet;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.med {
+    background-color: black;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small {
+    background-color: lime;
+    height: 1px;
+    width: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
