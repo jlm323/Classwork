@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    outline: 5px solid black;
+    height: 200px;
+    width: 33%;
+    background-color: grey;
+}
+
+/* */
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 600px) {
+    section {
+        background-color: aqua;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    section {
+        background-color: orange;
+    }
+}
