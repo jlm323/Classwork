@@ -1,0 +1,134 @@
+/* PISTONS */
+
+.piston-1 {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    transition: width 1s ease-in-out;
+}
+
+.piston-2 {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    transition: width 1s ease-in-out 1s;
+}
+
+.piston-1:hover {
+    width: 300px;
+}
+
+.piston-1:hover ~ .piston-2 {
+    width: 300px;
+}
+
+
+
+/* FORTUNE TELLER */
+
+.fortune-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 200px;
+    width: 200px;
+}
+
+.text {
+    position: absolute;
+    z-index: -1000;
+    font-size: 20px;
+    
+}
+
+.fortune-teller-1 {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    transition: transform 500ms ease-in-out;
+    transform-origin: top left;
+}
+
+.fortune-teller-2 {
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    transition: transform 500ms ease-in-out;
+    transform-origin: top right;
+}
+
+.fortune-teller-3 {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    transition: transform 500ms ease-in-out;
+    transform-origin: bottom left;
+}
+
+.fortune-teller-4 {
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    transition: transform 500ms ease-in-out;
+    transform-origin: bottom right;
+}
+
+.fortune-teller-1:hover {
+    transform: rotate(90deg);   
+}
+
+.fortune-teller-2:hover {
+    transform: rotate(-90deg)
+}
+
+.fortune-teller-3:hover {
+    transform: rotate(-90deg)
+}
+
+.fortune-teller-4:hover {
+    transform: rotate(90deg);
+}
+
+.fortune-teller-1:hover ~ .fortune-teller-2 {
+    transform: rotate(-90deg)
+}
+
+.fortune-teller-1:hover ~ .fortune-teller-3 {
+    transform: rotate(-90deg)
+}
+
+.fortune-teller-1:hover ~ .fortune-teller-4 {
+    transform: rotate(90deg)
+}
+
+
+
+/* JENGA */
+
+.jenga-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jenga-1, .jenga-3, .jenga-5, .jenga-7, .jenga-9 {
+    background-color: darkgray;
+    outline: 1px solid black;
+    width: 150px;
+    height: 65px;
+    transition: height 1s ease-in-out;
+}
+
+.jenga-2, .jenga-4, .jenga-6, .jenga-8, .jenga-10 {
+    background-color: rgb(77, 74, 74);
+    outline: 1px solid black;
+    width: 150px;
+    height: 65px;
+    transition: min-height 1s ease-in-out;
+}
+
+.jenga-1:hover {
+    height: 0px;
+}
