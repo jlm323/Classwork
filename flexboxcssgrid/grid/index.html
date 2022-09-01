@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div>HOME</div>
+        <div>ABOUT</div>
+        <div>WIDGETS</div>
+        <div>LOG OUT</div>
+      </nav>
+      <aside>SIDE BAR</aside>
+      <main>MAIN CONTENT</main>
+      <footer>FOOTER</footer>
+</body>
+</html>
+
+
+
+
+<!-- css grid has concept of the following: 
+        - tracks: any grid column or row
+        - cells: a single cell like in a table
+        - areas: any rectangular area of one or more cells
+        - lines: horizontal and vertical lines that divide the grid
+
+
+    turn element into grid container:
+    "display: grid"
+
+    properties:
+    "grid-template-rows"
+    "grid-template-columns"
+    "grid-template-area"
+
+    fr = fractional unit
+    will determine how much space is left on page and break it into fractions
+
+    grid-template-rows: 4fr 1fr --- the top row would be 4 times larger than bottom row
+
+    grid-template-columns: 1fr 1fr 1fr --- would be three columns of the same size
+
+
+    grid-column-gap / grid-row-gap / grid-gap (column AND row gap)
+    makes space between the columns/rows
+
+
+
+
+
+    example css:
+
+    .container {
+        display: grid;
+        grid-template-rows:
+        grid-template-columns:
+    }
+    .content1 {
+        grid-column: 1 / 4;
+    }
+
+
+    grid-column: 1 / 4 
+    is referring to adjusting the column so it spans from the first 'grid line' to the 4th
+
+-->
