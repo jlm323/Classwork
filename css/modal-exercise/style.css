@@ -1,0 +1,54 @@
+body {
+    background-color: white;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+button {
+    background-color: rgb(69, 69, 214);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(70, 70, 145);
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.493);
+}
+
+.content {
+    background-color: white;
+    color: black;
+    margin: 50% auto;
+    padding: 5px;
+    width: 60%;
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
