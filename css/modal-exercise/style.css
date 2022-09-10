@@ -12,7 +12,6 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
 }
 
 button {
@@ -41,7 +40,7 @@ button:hover {
 .content {
     background-color: white;
     color: black;
-    margin: 50% auto;
+    margin: 35% auto;
     padding: 5px;
     width: 60%;
 }
