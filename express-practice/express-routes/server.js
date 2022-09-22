@@ -1,43 +1,38 @@
 // load express
 const express = require('express');
+
+// bring in our packaged route
+const fruitRoutes = require('./routes/fruitRoutes');
+
+const meatRoutes = require('./routes/meatRoutes');
+
+const vegetableRoutes = require('./routes/vegetableRoutes');
+
 // create express app
 const app = express();
 // identify port
-const port = 5000;
+const port = 3000;
 
-const fruits = [
-    {
-        name:'apple',
-        color: 'red',
-        readyToEat: true
-    },
-    {
-        name:'pear',
-        color: 'green',
-        readyToEat: false
-    },
-    {
-        name:'banana',
-        color: 'yellow',
-        readyToEat: true
-    },
-    {
-        name: 'lemon',
-        color: 'yellow',
-        readyToEat: false
-    },
-    {
-        name: 'lime',
-        color: 'green',
-        readyToEat: false
-    }
-];
+// middleware
+app.use('/api/fruits', fruitRoutes);
+
+app.use('/api/meat', meatRoutes);
+
+app.use('/api/vegetables', vegetableRoutes);
+
+
+
+
+
+
+
+
 
 // setup root route
-app.get('/:color/:eat', (req, res) => {
-    const color = fruits.filter(fruits.color == 'yellow');
-    res.send(`yellow fruits: ${color}`)
-})
+// app.get('/:color/:eat', (req, res) => {
+//     const color = fruits.filter(fruits.color == 'yellow');
+//     res.send(`yellow fruits: ${color}`)
+// })
 
 // app.get('/', (req, res) => {
 //     quality = req.query.quality
