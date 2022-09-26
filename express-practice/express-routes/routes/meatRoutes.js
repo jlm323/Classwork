@@ -18,6 +18,13 @@ router.get('/new', (req, res) => {
     res.render('meat/New');
 })
 
+// setup create route
+router.post('/', (req, res) => {
+    meat.push(req.body);
+    console.log(meat);
+    res.redirect('/meat');
+});
+
 // setup show route
 router.get('/:index', (req, res) => {
     res.render('meat/Show', { meat: meat[req.params.index]});

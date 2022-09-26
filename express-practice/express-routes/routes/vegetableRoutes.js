@@ -18,6 +18,12 @@ router.get('/new', (req, res) => {
     res.render('vegetables/New');
 })
 
+router.post('/', (req, res) => {
+    vegetables.push(req.body);
+    console.log(vegetables);
+    res.redirect('/vegetables');
+});
+
 // setup show route
 router.get('/:index', (req, res) => {
     res.render('vegetables/Show', { vegetables: vegetables[req.params.index]});
