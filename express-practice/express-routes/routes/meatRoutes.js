@@ -20,7 +20,7 @@ router.get('/new', (req, res) => {
 
 // setup show route
 router.get('/:index', (req, res) => {
-    res.render('meat/Show', meat[req.params.index]);
+    res.render('meat/Show', { meat: meat[req.params.index]});
 });
 
 // setup edit route

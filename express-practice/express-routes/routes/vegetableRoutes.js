@@ -11,12 +11,16 @@ const router = express.Router();
 
 // setup index route
 router.get('/', (req, res) => {
-    res.send(vegetables);
+    res.render('vegetables/Index', { vegetables: vegetables });
 });
+
+router.get('/new', (req, res) => {
+    res.render('vegetables/New');
+})
 
 // setup show route
 router.get('/:index', (req, res) => {
-    res.send(vegetables[req.params.index]);
+    res.render('vegetables/Show', { vegetables: vegetables[req.params.index]});
 });
 
 module.exports = router;
