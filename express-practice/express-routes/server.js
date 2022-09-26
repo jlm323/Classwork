@@ -13,12 +13,22 @@ const app = express();
 // identify port
 const port = 3000;
 
+// setup our view engine
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
 // middleware
-app.use('/api/fruits', fruitRoutes);
+app.use(express.urlencoded({extended:false}))
 
-app.use('/api/meat', meatRoutes);
+// ?name=kiwi&color=green&readyToEat=value
 
-app.use('/api/vegetables', vegetableRoutes);
+app.use('/fruits', fruitRoutes);
+app.use('/meat', meatRoutes);
+app.use('/vegetables', vegetableRoutes);
+
+// app.use('/api/meat', meatRoutes);
+
+// app.use('/api/vegetables', vegetableRoutes);
 
 
 
@@ -57,3 +67,11 @@ app.listen(port, () => {
 // req.query
 // if statements
 // filter method (JS)
+
+
+
+
+// lab
+// 1. create index, new, show, and edit (form - just like New) for  meat, vegetables
+// 2. make sure you the appropriate routes for the other two food groups
+// 3. organize your views in subfolders and specify in res.render (ex. 'fruits/Index')

@@ -10,12 +10,22 @@ const router = express.Router();
 
 // setup index route
 router.get('/', (req, res) => {
-    res.send(meat);
+    res.render('meat/Index', { meat: meat });
 });
+
+//setup New route
+router.get('/new', (req, res) => {
+    res.render('meat/New');
+})
 
 // setup show route
 router.get('/:index', (req, res) => {
-    res.send(meat[req.params.index]);
+    res.render('meat/Show', meat[req.params.index]);
 });
+
+// setup edit route
+// router.get('/:index/edit', (req, res) => {
+//     res.send('<form>edit meat</form>');
+// });
 
 module.exports = router;
