@@ -1,4 +1,5 @@
 const React = require('react');
+const DefaultLayout = require('../layouts/DefaultLayout');
 
 class Index extends React.Component {
     render() {
@@ -6,6 +7,7 @@ class Index extends React.Component {
         const { vegetables } = this.props;
 
         return (
+            <DefaultLayout>
             <div>
                 <h1>Vegetables Index Page</h1>
                 <ul>
@@ -23,6 +25,7 @@ class Index extends React.Component {
                     <a href='/vegetables/New'>Create a new vegetable</a>
                 </nav>
             </div>
+            </DefaultLayout>
         );
     }
 }

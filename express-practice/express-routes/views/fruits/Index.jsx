@@ -1,4 +1,5 @@
 const React = require('react');
+const DefaultLayout = require('../layouts/DefaultLayout');
 
 class Index extends React.Component {
     render() {
@@ -17,23 +18,25 @@ class Index extends React.Component {
             ]
         */
         return (
-            <div>
-                <h1>Fruits Index Page</h1>
-                <ul>
-                    {fruits.map((fruit, i) => {
-                        return (
-                            <li key={i}>
-                                The <a href={`/fruits/${i}`}>{fruit.name}</a> is {fruit.color}.
-                            </li>
-                        )
-                    })}
-                    
-                </ul>
+            <DefaultLayout title="All Fruit" foodGroup="fruits">
+                <div>
+                    <h1>Fruits Index Page</h1>
+                    <ul id="fruit-index">
+                        {fruits.map((fruit) => {
+                            return (
+                                <li key={fruit._id}>
+                                    The <a href={`/fruits/${fruit._id}`}>{fruit.name}</a> is {fruit.color}.
+                                </li>
+                            )
+                        })}
+                        
+                    </ul>
 
-                <nav>
-                    <a href='/fruits/New'>Create a new fruit</a>
-                </nav>
-            </div>
+                    <nav>
+                        <a href='/fruits/New'>Create a new fruit</a>
+                    </nav>
+                </div>
+            </DefaultLayout>
         );
     }
 }

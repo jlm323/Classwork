@@ -1,5 +1,6 @@
 // load express
 const express = require('express');
+const mongoose = require('mongoose');
 
 // bring in our packaged route
 const fruitRoutes = require('./routes/fruitRoutes');
@@ -8,10 +9,12 @@ const meatRoutes = require('./routes/meatRoutes');
 
 const vegetableRoutes = require('./routes/vegetableRoutes');
 
+require('dotenv').config()
+
 // create express app
 const app = express();
 // identify port
-const port = 3000;
+const port = process.env.PORT;
 
 // setup our view engine
 app.set('view engine', 'jsx');
@@ -19,12 +22,18 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 // middleware
 app.use(express.urlencoded({extended:false}))
+app.use(express.static("public"))
 
 // ?name=kiwi&color=green&readyToEat=value
 
 app.use('/fruits', fruitRoutes);
 app.use('/meat', meatRoutes);
 app.use('/vegetables', vegetableRoutes);
+
+mongoose.connect(process.env.MONGO_DB);
+mongoose.connection.once('open', () => {
+    console.log('Connected to MongoDB')
+}) 
 
 // app.use('/api/meat', meatRoutes);
 

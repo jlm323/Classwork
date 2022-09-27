@@ -1,4 +1,5 @@
 const React = require('react');
+const DefaultLayout = require('../layouts/DefaultLayout');
 
 class Show extends React.Component {
     render() {
@@ -6,6 +7,7 @@ class Show extends React.Component {
         const { name, color } = this.props.vegetables;
 
         return (
+            <DefaultLayout>
             <div>
                 <h1>Show Page</h1>
                 <p>
@@ -15,6 +17,7 @@ class Show extends React.Component {
                     <a href="/vegetables">Back</a>
                 </nav>
             </div>
+            </DefaultLayout>
         );
     }
 }
