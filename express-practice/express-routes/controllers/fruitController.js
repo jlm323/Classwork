@@ -117,6 +117,17 @@ const deleteAFruit = (req, res) => {
     })
 }
 
+const clearData = (req, res) => {
+    Fruit.deleteMany({}, (err, deleteFruit) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect('/fruits')
+        }
+    })
+}
+
+
 module.exports = {
     findAllFruits,
     showNewView,
@@ -126,4 +137,5 @@ module.exports = {
     showEditView,
     updateOneFruit,
     deleteAFruit,
+    clearData
 }

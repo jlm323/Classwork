@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 // bring in controller functions
-const { findAllMeat, showNewView, deleteAMeat, updateOneMeat, createNewMeat, showEditView, showOneMeat, seedStarterData } = require('../controllers/meatController')
+const { findAllMeat, showNewView, deleteAMeat, updateOneMeat, createNewMeat, showEditView, seedStarterData, showOneMeat, clearData } = require('../controllers/meatController')
 
 
 
@@ -29,6 +29,9 @@ router.get('/:id/edit', showEditView)
 
 // setup 'seed' route
 router.get('/seed', seedStarterData)
+
+// clear route
+router.get('/clear', clearData)
 
 // setup show route
 router.get('/:id', showOneMeat);

@@ -4,7 +4,7 @@ const express = require('express');
 // create a special router object for our routes
 const router = express.Router();
 
-const { findAllVegetables, showNewView, deleteAVegetables, updateOneVegetables, createNewVegetables, showEditView, showOneVegetables, seedStarterData} = require('../controllers/vegetableController');
+const { findAllVegetables, showNewView, deleteAVegetables, updateOneVegetables, createNewVegetables, showEditView, seedStarterData, showOneVegetables, clearData } = require('../controllers/vegetableController');
 
 // setup index route
 router.get('/', findAllVegetables);
@@ -26,6 +26,9 @@ router.get('/:id/edit', showEditView)
 
 // setup 'seed' route
 router.get('/seed', seedStarterData)
+
+// clear route
+router.get('/clear', clearData)
 
 // setup show route
 router.get('/:id', showOneVegetables);

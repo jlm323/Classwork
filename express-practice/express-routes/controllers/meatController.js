@@ -103,6 +103,16 @@ const deleteAMeat = (req, res) => {
         }
     })
 }
+// clear data
+const clearData = (req, res) => {
+    Meat.deleteMany({}, (err, deleteMeat) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect('/meat')
+        }
+    })
+}
 
 module.exports = {
     findAllMeat,
@@ -113,4 +123,5 @@ module.exports = {
     showEditView,
     updateOneMeat,
     deleteAMeat,
+    clearData
 }
