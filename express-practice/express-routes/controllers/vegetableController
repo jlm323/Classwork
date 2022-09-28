@@ -1,0 +1,116 @@
+const Vegetables = require('../models/vegetable')
+
+// bring in seed data
+const seed = require('../models/seed');
+
+// route - GET /vegetabless (index)
+const findAllVegetables = (req, res) => {
+    // Find takes two arguments: 1. an object with our query (to filter our data and find exactly what we need), 2. callback (with an error object and the found data)
+    Vegetables.find({}, (err, foundVegetables) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render('vegetables/Index', { vegetables: foundVegetables })
+        }
+    })
+}
+
+// route - GET /vegetabless/New (new)
+const showNewView = (req, res) => {
+    res.render('vegetables/New');
+}
+
+// route - POST /vegetables/ (create)
+const createNewVegetables = (req, res) => {
+    // create has two arguments: 1. the data we want to send, 2. callback function
+    Vegetables.create(req.body, (err, createdVegetables) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect('/vegetables')
+        }
+    }) 
+}
+
+// route - GET /vegetabless/seed (seed)
+const seedStarterData = (req, res) => {
+    // delete all remaining documents, if there are any
+    Vegetables.deleteMany({}, (err, deleteVegetables) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            console.log('deleted data')
+            console.log(seed.vegetables)
+            // data has been successfully deleted, now use seed data to repopulate the database
+            Vegetables.create(seed.vegetables, (err, createdVegetables) => {
+                if (err) {
+                    res.status(400).json(err)
+                } else {
+                    res.status(200).redirect('/vegetables')
+                }
+            })
+        }
+    })
+}
+
+// route - GET /vegetabless/:id (show)
+const showOneVegetables = (req, res) => {
+    // findById accepts two arguments: 1. the id of the document in our database, 2. callback (with error object and found document)
+    Vegetables.findById(req.params.id, (err, foundVegetables) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render('vegetables/Show', {vegetables: foundVegetables})
+        }
+    } )
+}
+
+// route - GET /:id/edit (edit)
+const showEditView = (req, res) => {
+    Vegetables.findById(req.params.id, (err, foundVegetables) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render('vegetables/Edit', { vegetables: foundVegetables });
+        }
+    })
+}
+
+// route - PUT /:id (update)
+const updateOneVegetables = (req, res) => {
+    // findByIdAndUpdate takes four arguments: 
+    //      1. the id 
+    //      2. new data we want to use to update old document
+    //      3. (optional) an options object, 
+    //          e.g.:  { new: true }
+    //      4. callback (with error object and updatedvegetables)
+    Vegetables.findByIdAndUpdate(req.params.id, req.body, (err, foundVegetables) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect('/vegetables');
+        }
+    })
+}
+
+// route - DELETE /:id (delete)
+const deleteAVegetables = (req, res) => {    
+    Vegetables.findByIdAndDelete(req.params.id, (err, deleteVegetables) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect('/vegetables')
+        }
+    })
+}
+
+module.exports = {
+    findAllVegetables,
+    showNewView,
+    createNewVegetables,
+    seedStarterData,
+    showOneVegetables,
+    showEditView,
+    updateOneVegetables,
+    deleteAVegetables,
+}

@@ -7,14 +7,14 @@ class Index extends React.Component {
         const { vegetables } = this.props;
 
         return (
-            <DefaultLayout>
+            <DefaultLayout title="All Vegetables" foodGroup="vegetables">
             <div>
                 <h1>Vegetables Index Page</h1>
                 <ul>
-                    {vegetables.map((vegetables, i) => {
+                    {vegetables.map((vegetables) => {
                         return (
-                            <li key={i}>
-                                The <a href={`/vegetables/${i}`}>{vegetables.name}</a> is {vegetables.color}.
+                            <li key={vegetables._id}>
+                                The <a href={`/vegetables/${vegetables._id}`}>{vegetables.name}</a> is {vegetables.color}.
                             </li>
                         )
                     })}

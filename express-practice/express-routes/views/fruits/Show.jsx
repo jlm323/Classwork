@@ -4,18 +4,27 @@ const DefaultLayout = require('../layouts/DefaultLayout');
 class Show extends React.Component {
     render() {
         // object destructuring
-        const { name, color, readyToEat } = this.props.fruit;
+        const { fruit } = this.props;
 
         return (
-            <DefaultLayout title={`${name} details`} foodGroup="fruits">
+            <DefaultLayout title={`${fruit.name} details`} foodGroup="fruits">
             <div>
                 <h1>Show Page</h1>
                 <p>
-                    The {name} is {color}.
+                    The {fruit.name} is {fruit.color}.
                 </p>
                 <p>
-                    {readyToEat ? "It is ready to eat" : "It is not ready to eat"}.
+                    {fruit.readyToEat ? "It is ready to eat" : "It is not ready to eat"}.
                 </p>
+
+                <button>
+                    <a href={`/fruits/${fruit._id}/edit`}> Edit</a>
+                </button>
+
+                <form action={`/fruits/${fruit._id}?_method=DELETE`} method="POST">
+                    <input type="submit" value="delete" />
+                </form>
+
                 <nav>
                     <a href="/fruits">Back</a>
                 </nav>

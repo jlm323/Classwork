@@ -1,32 +1,35 @@
 // load express
 const express = require('express');
 
-// load our vegetables data
-const vegetables = require('../models/vegetables');
-
 // create a special router object for our routes
 const router = express.Router();
 
-
+const { findAllVegetables, showNewView, deleteAVegetables, updateOneVegetables, createNewVegetables, showEditView, showOneVegetables, seedStarterData} = require('../controllers/vegetableController');
 
 // setup index route
-router.get('/', (req, res) => {
-    res.render('vegetables/Index', { vegetables: vegetables });
-});
+router.get('/', findAllVegetables);
 
-router.get('/new', (req, res) => {
-    res.render('vegetables/New');
-})
+//setup New route
+router.get('/new', showNewView)
 
-router.post('/', (req, res) => {
-    vegetables.push(req.body);
-    console.log(vegetables);
-    res.redirect('/vegetables');
-});
+//setup Delete route
+router.delete('/:id', deleteAVegetables)
+
+// setup update route
+router.put('/:id', updateOneVegetables)
+
+// setup create route
+router.post('/', createNewVegetables);
+
+// setup edit route
+router.get('/:id/edit', showEditView)
+
+// setup 'seed' route
+router.get('/seed', seedStarterData)
 
 // setup show route
-router.get('/:index', (req, res) => {
-    res.render('vegetables/Show', { vegetables: vegetables[req.params.index]});
-});
+router.get('/:id', showOneVegetables);
+
+
 
 module.exports = router;

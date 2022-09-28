@@ -5,13 +5,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // create Schema
-const veggieSchema = new Schema({
+const vegetableSchema = new Schema({
     name: { type: String, required: true },
     color: { type: String, required: true },
 })
 
 // create a Model from our Schema
-const Vegetable = mongoose.model('Vegetable', veggieSchema)
+const Vegetables = mongoose.model('Vegetables', vegetableSchema)
 
 // export the Model
-module.exports = Vegetable;
+module.exports = Vegetables;

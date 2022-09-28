@@ -1,6 +1,10 @@
 // load express
 const express = require('express');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+
+// bring in mongoConfig function
+const mongoConfig = require('./config');
 
 // bring in our packaged route
 const fruitRoutes = require('./routes/fruitRoutes');
@@ -8,6 +12,7 @@ const fruitRoutes = require('./routes/fruitRoutes');
 const meatRoutes = require('./routes/meatRoutes');
 
 const vegetableRoutes = require('./routes/vegetableRoutes');
+
 
 require('dotenv').config()
 
@@ -23,6 +28,8 @@ app.engine('jsx', require('express-react-views').createEngine());
 // middleware
 app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"))
+// app.use(express.json())
+app.use(methodOverride("_method"))
 
 // ?name=kiwi&color=green&readyToEat=value
 
@@ -30,10 +37,7 @@ app.use('/fruits', fruitRoutes);
 app.use('/meat', meatRoutes);
 app.use('/vegetables', vegetableRoutes);
 
-mongoose.connect(process.env.MONGO_DB);
-mongoose.connection.once('open', () => {
-    console.log('Connected to MongoDB')
-}) 
+
 
 // app.use('/api/meat', meatRoutes);
 
@@ -70,6 +74,9 @@ mongoose.connection.once('open', () => {
 app.listen(port, () => {
     console.log('listening on port: ', port)
 })
+
+// connect to db
+mongoConfig()
 
 // use queries to filter the data sent back to the client. create at least 2 filters based off queries. you can use root route. 
 // ?key=value

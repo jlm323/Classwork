@@ -4,15 +4,22 @@ const DefaultLayout = require('../layouts/DefaultLayout');
 class Show extends React.Component {
     render() {
         // object destructuring
-        const { name, color } = this.props.vegetables;
+        const { vegetables } = this.props;
 
         return (
-            <DefaultLayout>
+            <DefaultLayout title={`${vegetables.name} details`} foodGroup="vegetables">
             <div>
-                <h1>Show Page</h1>
+                <h1>Vegetables Show Page</h1>
                 <p>
-                    The {name} is {color}.
+                    The {vegetables.name} is {vegetables.color}.
                 </p>
+                <button>
+                    <a href={`/vegetables/${vegetables._id}/edit`}> Edit</a>
+                </button>
+
+                <form action={`/vegetables/${vegetables._id}?_method=DELETE`} method="POST">
+                    <input type="submit" value="delete" />
+                </form>
                 <nav>
                     <a href="/vegetables">Back</a>
                 </nav>
