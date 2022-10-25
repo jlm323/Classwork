@@ -1,4 +1,29 @@
-:root {
+/* body {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 25px;
+
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  font-size: 25px;
+} */
+
+
+
+
+
+/* :root {
   --dark-cerulean: #124e78;
   --maastricht-blue: #0b132b;
   --yankees-blue: #1C2541;
@@ -65,4 +90,4 @@ h1 {
   color: var(--react);
   text-align: center;
 
-}
+} */
