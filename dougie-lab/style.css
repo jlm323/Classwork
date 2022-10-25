@@ -34,9 +34,9 @@ input {
     border-radius: 5px;
 }
 
-.class {
-    width: 700px;
-    height: 750px;
+.crime {
+    width: 500px;
+    height: 200px;
     border: 1px solid black;
-    background-color: blue;
+    background-color: rgb(120, 120, 243);
 }

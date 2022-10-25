@@ -1,6 +1,7 @@
 let container = document.getElementById("container")
 let buttons = document.querySelectorAll("button")
 let input = document.querySelector("input")
+let crime = document.querySelector("crime")
 
 container.addEventListener("click", (e) => { 
     if (e.target.classList.contains("button")) {
